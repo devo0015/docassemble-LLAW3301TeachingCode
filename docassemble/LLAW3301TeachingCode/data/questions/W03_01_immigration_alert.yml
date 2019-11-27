@@ -5,7 +5,9 @@ question: Immigration Alert
 subquestion: |
   Your Ozzie status is: **${ MJFis_an_ozzie }**
   
+  %if MJFis_an_ozzie != 'Yes':
   The Peter Dutton alert status is: **${ MJFalert_peter_dutton }**
+  %endif
 buttons:
   - Exit: exit
   - Restart: restart
@@ -15,7 +17,6 @@ buttons:
 code: |
   if MJFis_citizen == 'Yes':
     MJFis_an_ozzie = True
-    MJFalert_peter_dutton = False
   else:
     MJFis_an_ozzie = False
     MJFalert_peter_dutton = True
