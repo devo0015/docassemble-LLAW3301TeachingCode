@@ -29,12 +29,12 @@
        comes with colour picking software that will show you the RGB values
        for any colour you pick
     */
-    background-color: rgb(255,242,102) !important;
+    background-color: rgb(255,255,255) !important;
 }
 .navbar .navbar-brand{
     color : #000;
     font-weight: bolder;
-    font-size: 1.3em;
+    font-size: 2.0em;
 }
 .navbar .navbar-brand:hover{
     color: #000;
@@ -50,41 +50,17 @@
         'alpha' or transaparency value.  Here we are saying
         to set the transparency to 30%
     */
-    background-color: rgba(255,242,102,0.3);
+    background-color: rgba(255,255,255,0.3);
 }
 .dropdown-item:hover{
-    background-color: rgba(255,242,102,0.3);
+    background-color: rgba(255,255,255,0.3);
 }
 .navbar form button{
-    background-color: #ea00b1;
+    background-color: rgba(255,255,255,0.3);
     color:#FFF;
     /* setting the border to 0 disables the border around the button */
     border:0;
 }
 .navbar form button:hover{
-    background-color: #000;
-}
-
-.btn-primary{
-  color: #000;
-  background-color: rgb(255,242,102);
-  border-color: #000;
-}
-
-.btn-primary:hover{
-  color: #000;
-  background-color: rgba(255,242,102,0.3);
-  border-color: #000;
-}
-
-.MJFheader{
-    /* Set the colour to red */
-    color: rgb(255,0,0);
-    /* Make the font bigger.  This increases the font size by 20% */
-    font-size: 1.2em;
-    /* Make it bold */
-    font-weight: bolder;
-    /* Add a text shadow */
-    /* check out text shadows here: https://cssreference.io/property/text-shadow/ */
-    text-shadow: 2px 4px 10px tomato;
+    background-color: rgba(255,255,255,0.3);
 }

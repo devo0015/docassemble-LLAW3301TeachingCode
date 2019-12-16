@@ -1,28 +1,36 @@
 # Demonstrating the benefits of iteration
 ---
-# A list to store questions
----
-# A list expressed in YAML
-variable name: MJFquestions
+# We're expressing our list of names as a 'variable name' declaration
+# now.
+variable name: MJFname
 use objects: True
 data:
-  - "What is your name?"
-  - "What is your age?"
-  - "Where do you live?"
-  - "How tall are you?"
+  - Ida Noe
+  - Hugo First
+  - Moda Lawn
+  - Kate Jup
+  - Ayfor Gott
+  - Justin Tyme
+  - Ray Member
+  - Studie Harde
 ---
 # Displaying the questions without iteration
 mandatory: True
 question: Display without iteration
 subquestion: | 
-  Without iteration we need to list the questions out one by one
+  Without iteration we need to list the items out one by one
   
-  - ${ MJFquestions[0] }
-  - ${ MJFquestions[1] }
-  - ${ MJFquestions[2] }
-  - ${ MJFquestions[3] }
+  - ${ MJFname[0] }
+  - ${ MJFname[1] }
+  - ${ MJFname[2] }
+  - ${ MJFname[3] }
+  - ${ MJFname[4] }
+  - ${ MJFname[5] }
+  - ${ MJFname[6] }
+  - ${ MJFname[7] }
 
-  It's inefficient - too much copy and pasting and difficult to modify
+  It's inefficient - too much copy and pasting and difficult to modify.
+  What happens if the number of items changes?
 buttons:
   - Continue: continue
 ---
@@ -32,7 +40,7 @@ question: Display with iteration
 subquestion: |
   Look how much less we're writing here!
   
-  % for MJFitem in MJFquestions:
+  % for MJFitem in MJFname:
   - ${ MJFitem }
   % endfor
   
@@ -40,5 +48,53 @@ subquestion: |
   whether we have 5 or 500 items in our list.  This is a
   much more efficient way to store data
 buttons:
-  - Exit: exit
-  - Restart: restart
+  - Continue: continue
+---
+# A smarter example.  We use a table
+# Displaying with iteration is better
+mandatory: True
+question: Display with iteration
+subquestion: |
+  Start off with the table header and then we use 
+  iteration to supply the table body
+  
+  Item|Name
+  ---|---
+  % for MJFitem in MJFname:
+  ${ loop.index + 1 }|${ MJFitem }
+  % endfor
+  
+  `loop.index` is a special Docassemble variable that only works in for loops.
+  It gives you the index of the current element in the list.  Remember, we
+  start counting from 0, so we need to add 1 to `loop.index` to give us the 
+  information we're after.
+buttons:
+  - Continue: continue
+---
+---
+# A smarter example.  We use a table
+# Displaying with iteration is better
+mandatory: True
+question: Display with iteration
+subquestion: |
+  List items that end in a vowel.
+  
+  We use an if statement inside the for loop to select only the
+  list items we want.
+  
+  Item|Name
+  ---|---
+  % for MJFitem in MJFname:
+  % if MJFitem[-1].lower() in set('aeiou'):
+  ${ loop.index + 1 }|${ MJFitem }
+  % else:
+  ${loop.index + 1}|**REDACTED**
+  % endif
+  % endfor
+  
+  `loop.index` is a special Docassemble variable that only works in for loops.
+  It gives you the index of the current element in the list.  Remember, we
+  start counting from 0, so we need to add 1 to `loop.index` to give us the 
+  information we're after.
+buttons:
+  - Continue: continue

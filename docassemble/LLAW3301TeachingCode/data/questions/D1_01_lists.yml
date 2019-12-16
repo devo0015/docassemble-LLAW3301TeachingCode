@@ -1,0 +1,63 @@
+---
+variable name: MJFname2
+use objects: True
+data:
+  - Carol Ling
+  - Dee Lightful
+  - Jay Walker
+  - Fon Dew
+---
+objects:
+  - MJFname3: DAList
+---
+question: Variables
+mandatory: True
+subquestion: |
+  Here are our different lists.
+  
+  **MJFname** is a regular Python list.  We can display it using Mako:
+  
+  `${ MJFname }`
+  
+  **MJFname2** was declared using `variable name`.  It's a DAList which means
+  we have access to some additional *methods*, such as displaying the length
+  of the list in words:
+  
+  MJFname2 has **${ MJFname2.number_as_word() }** items.
+  
+  and displaying its items in a more readable way:
+  
+  MJFname2's elements are: *${ MJFname2.comma_and_list() }*
+  
+  **MJFname3** is declared as a `DAList` using an `object` block.  That means
+  we also get access to the DAList goodness.
+  
+  MJFname3 has **${ MJFname3.number_as_word() }** items
+
+  MJFname3's elements are: *${ MJFname3.comma_and_list() }*
+---
+code: |
+  # We add items by appending them
+  MJFname3.append('Fuller Doodoo')
+  MJFname3.append('Star Veeng')
+  MJFname3.append('Gotha Goe')
+  
+  # When we finish adding items to our list, we must include these
+  # two lines.
+  MJFname3.there_are_any = False
+  MJFname3.there_is_another = False
+---
+# Define a python list in a code block.  This is the simplest way
+# but we lose soem of the DAList goodies so we won't usually use this
+code: |
+  MJFname = [
+    'Ida Noe',
+    'Hugo First',
+    'Moda Lawn',
+    'Kate Jup',
+    'Ayfor Gott',
+    'Justin Tyme',
+    'Ray Member',
+    'Studie Harde'
+  ]
+---

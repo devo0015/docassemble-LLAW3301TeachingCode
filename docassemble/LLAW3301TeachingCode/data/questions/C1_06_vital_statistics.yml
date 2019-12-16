@@ -12,7 +12,9 @@ subquestion: |
   Your name             | ${ MJFsalutation } ${ MJFfirstname } ${ MJFlastname }
   Your age              | ${ MJFage }
   Are you employed?     | ${ MJFisemployed }
+  % if MJFisemployed == 'Yes':
   Your annual income    | ${ currency(MJFannualincome) }
+  % endif
   Your favourite hobbies| ${ MJFhobbies.true_values() }
 buttons:
   - I'm done: exit
@@ -48,7 +50,7 @@ fields:
       is: 'Yes'
 terms:
   income: |
-    Your income should be your gross (ie: before tax) income
+    Your income should be your **gross** (ie: before tax) income
 ---
 question: Hobbies
 subquestion: |
