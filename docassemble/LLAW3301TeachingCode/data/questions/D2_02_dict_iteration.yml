@@ -1,0 +1,48 @@
+---
+objects:
+  - MJFperson_info: DADict
+---
+variable name: MJFperson_info2
+use objects: True
+data:
+  Name: Ida Noe
+  Number of Children: 4
+  Household Income: 45000
+  Is a Citizen?: True
+---
+mandatory: True
+question: The Inefficient Way
+subquestion: |
+  ### Personal Information
+  
+  Category|Value
+  ---|---
+  Name               | ${MJFperson_info['Name']}
+  Number of Children | ${MJFperson_info['Number of Children']}
+  Household Income   | ${MJFperson_info['Household Income']}
+  Is a Citizen?      | ${MJFperson_info['Is a Citizen?']}
+buttons:
+  - Continue: continue
+---
+mandatory: True
+question: How it should be done
+subquestion: |
+  ### Personal Information
+  
+  Category|Value
+  ---|---
+  %for MJFkey in MJFperson_info2:
+  ${ MJFkey } | ${MJFperson_info2[MJFkey]}
+  %endfor
+buttons:
+  - Continue: continue
+---
+
+code: |
+  MJFperson_info = {
+    'Name': 'Idoo Noe',
+    'Number of Children': 4,
+    'Household Income': 45000,
+    'Is a Citizen?': True
+  }
+---
