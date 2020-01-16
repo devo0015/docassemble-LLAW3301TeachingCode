@@ -1,0 +1,63 @@
+---
+# A wide range of metadata can be set for your code.  In this example
+# we set the title, short title and (potentially)disable login prompts.
+# For more information on metadata visit
+# https://docassemble.org/docs/initial.html#metadata
+metadata:
+  title: |
+    Look and Feel Demonstrator
+  short title: |
+    Style Demonstrator
+  show login: True
+---
+# Declare your logo as an object.  This is required to display the
+# logo in the navbar along with the title (by default, Docassemble
+# displays *either* the Title text or the logo)).  The image file
+# is in the 'Static' folder in the Playground
+objects:
+  - MJFlogo: DAStaticFile.using(filename='C4_01_flinders_logo.png')
+---
+# We want to set a logo also.  The Docassemble manual (Initial Blocks [1])
+# says we can use a 'logo' key.  That only works when using an image file
+# that's not in the package (ie: on the internet somewhere).  As our logo is
+# uploaded in our package we need this code block to set our logo.
+#
+# Note also at the end of set_parts() below we control the height of our logo
+# using the 'height' style
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + MJFlogo.url_for() + '" style="height: 50px;">')
+---
+# Features can turn on or off many, well, features in Docassemble.  
+# Our example includes a CSS file and (potentially) turns off the menus in the navbar.
+# The CSS file is in the 'Static' folder in the playground.
+# For more information on features visit
+# https://docassemble.org/docs/initial.html#features
+features:
+  css: C4_01_lnf_with_comments.css
+  debug: True
+  hide standard menu: False
+---
+# Customising the look and feel
+mandatory: True
+question: Look and Feel Demonstrator
+subquestion: |
+  This question block demonstrates how to perform basic customisations to the look and feel
+  of your app.  Most of the customisation is done in a CSS file.  CSS (or 'Cascading Style
+  Sheets') is a standard way of customising the look and feel of webapps.  Have a look at
+  the CSS file for this app to see more information about how it is customised.
+
+  You can also use raw HTML and CSS to improve the display of your outputs.  Raw HTML can be
+  mixed with markdown.  You can use CSS to control how your raw HTML looks.  For example, the `span`
+  block below is linked to a CSS style called `MJFheader`.  If you find `MJFheader` in the CSS
+  file you will see the commands that set the colour and font style.
+
+  <span class="MJFheader">
+    This text appears in a span block and is formatted according to
+    the `MJFheader` style
+  </span>
+buttons:
+  - Exit: exit
+  - Restart: restart
+  - Continue: continue
+---
