@@ -29,7 +29,7 @@
        comes with colour picking software that will show you the RGB values
        for any colour you pick
     */
-    background-color: rgb(208, 207, 255) !important;
+    background-color: rgb(242, 139, 49) !important;
 }
 .navbar .navbar-brand{
     color : rgb(0,0,0);
@@ -50,30 +50,30 @@
         'alpha' or transaparency value.  Here we are saying
         to set the transparency to 30%
     */
-    background-color: rgba(208, 207, 255,0.3);
+    background-color: rgba(16, 73, 158,0.3);
 }
 .dropdown-item:hover{
-    background-color: rgba(208, 207, 255,0.3);
+    background-color: rgba(16, 73, 158,0.3);
 }
 .navbar form button{
-    background-color: rgb(208,207,255);
-    color: rgb(2525,255,255);
+    background-color: rgb(242,139,49);
+    color: rgb(0,0,0);
     /* setting the border to 0 disables the border around the button */
     border:0;
 }
 .navbar form button:hover{
-    background-color: rgb(0,0,0)
+    background-color: rgb(242,139,49)
 }
 
 .btn-primary{
   color: rgb(0,0,0);
-  background-color: rgb(208, 207, 255);
+  background-color: rgb(242, 139, 49);
   border-color: rgb(0,0,0);
 }
 
 .btn-primary:hover{
   color: rgb(0,0,0);
-  background-color: rgba(208,207,255,0.3);
+  background-color: rgba(242,139,49,0.3);
   border-color: rgb(0,0,0);
 }
 

@@ -1,0 +1,73 @@
+---
+# If we use objects we will declare them here.  Every application has
+# an 'endpoint' object.  You may use other objects depending on your
+# application's needs
+objects:
+  - endpoint: DADict
+---
+# Metadata about the app.  This isn't displayed anywhere but is useful
+# as a record.
+metadata:
+  title: |
+    CBS Inc NDIS Advisor
+  authors:
+    - name: Taylor Moore
+    - name: Grace Hensel
+    - name: Shimron Lobo
+  organisation:  Flinders University
+---
+objects:
+  - CBSLogo: DAStaticFile.using(filename='CBS-logo-small-white.png')
+---
+mandatory: True
+code: |
+  STGmetadata = all_variables(special='metadata')
+  
+  STGlogostring = '<div class="media"><img src="'
+  
+  STGlogostring += CBSLogo.url_for()
+ 
+  STGlogostring += '" class="mr-3" height="80">'
+  STGlogostring += '<div class="media-body">'
+  STGlogostring += '<h5 class="mt-0">&nbsp; <b>' + STGmetadata['title'] + '</b></h5>'
+  STGlogostring += '</div></div>'
+  
+  set_parts(logo=STGlogostring)
+---
+features:
+  css: CBSInc.css
+  debug: True
+  hide standard menu: False
+---
+# Welcome screen should go here
+mandatory: True
+question: |
+  NDIS Advisor Questionnaire
+subquestion: |
+  Welcome to our NDIS Eligibility Questionnaire!
+  
+  The purpose of this questionnaire is to decide whether you are likely eligible
+  for the National Disability Insurance Scheme (NDIS) and to give you tips for the
+  next steps in applying.
+  
+  **This questionnaire currently only applies for people with autism spectrum disorder.**
+  
+    ***Disclaimer***  
+  
+    This questionnaire is **not** legal advice. 
+  
+    Please answer all questions honestly.
+    
+    This questionnaire does not guarantee you will receive funding from the NDIS. 
+    It will help you assess whether you are likely eligible and give you tips
+    on the next steps.
+    
+    **The NDIA will make the final decision.**
+    
+    *We advise you to have a support person while filling out the questionnaire.*
+  If you continue, you accept these terms.
+buttons:
+  - Continue: continue
+  - Exit: exit
+    url: https://communitybridgingservices.org.au
+---
