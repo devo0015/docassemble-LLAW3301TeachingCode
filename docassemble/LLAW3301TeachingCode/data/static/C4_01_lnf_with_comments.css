@@ -32,19 +32,6 @@
     background-color: rgb(255,211,0) !important;
 }
 
-/* If we wanted to display our app's name as well as the logo in the navbar we
-   would use these two styles.  However, we are not using them in this C4_01 
-   exampls
-*/
-.navbar .navbar-brand{
-    color : rgb(0,0,0);
-    font-weight: bolder;
-    font-size: 2.0em;
-}
-.navbar .navbar-brand:hover{
-    color: rgb(0,0,0);
-}
-
 /* This sets the colour of the 'Source' link in the navbar */
 .navbar .nav-item a{
     color: rgb(0,0,0) !important;
@@ -63,7 +50,7 @@
 /* Sets properties for when hovering over a menu item in the 
    drop-down menu */
 .dropdown-item:hover{
-    background-color: rgba(255,211,0,0.3);
+    background-color: rgba(255,211,0,0.5);
 }
 
 /* Sets the appearnce for the 'Continue' button... */
