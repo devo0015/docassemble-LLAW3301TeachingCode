@@ -16,7 +16,7 @@ data:
   - Gothe Go
 ---
 # Displaying the questions without iteration
-mandatory: False
+mandatory: True
 question: Display without iteration
 subquestion: | 
   Without iteration we need to list the items out one by one

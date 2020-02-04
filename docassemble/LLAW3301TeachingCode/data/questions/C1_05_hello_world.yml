@@ -5,7 +5,7 @@ question: Hello World!
 subquestion: |
   ### Welcome to Docassemble!
 
-  Dear ${ NATsalutation + ' ' + NATlastname },
+  Dear ${ MJFsalutation + ' ' + MJFlastname },
 
   Thi sis a quick introduction to Markdown.
 
@@ -20,11 +20,11 @@ subquestion: |
 
   Column1|Column2
   -------|-------
-  Salutation|${ NATsalutation }
-  First Name|${ NATfirstname }
-  Last Name|${ NATlastname }
+  Salutation|${ MJFsalutation }
+  First Name|${ MJFfirstname }
+  Last Name|${ MJFlastname }
 attachment:
-  docx template file: First_Docassemble_Template.docx
+  docx template file: W01_Docassemble_Template.docx
 buttons:
   - I'm done: exit
     url: https://flinders.edu.au
@@ -32,12 +32,12 @@ buttons:
 ---
 question: Name
 fields:
-  - Salutation: NATsalutation
+  - Salutation: MJFsalutation
     choices:
       - Dr
       - Mr
       - Mrs
       - Ms
-  - First Name: NATfirstname
-  - Last Name: NATlastname
+  - First Name: MJFfirstname
+  - Last Name: MJFlastname
 ---
