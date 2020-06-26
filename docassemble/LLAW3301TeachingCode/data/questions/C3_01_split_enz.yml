@@ -66,13 +66,13 @@ buttons:
 ---
 # This is the eligible endpoint.
 event: endpoint['eligible']
-question: Result of main program
+question: You are eligible
 subquestion: |
-  The final report for whatever you are determining (eg: eligibility for the NDIS
-  or the SACAT stay application or the relative homelessness service) will be 
-  constructed in this subquestion field in your eligible endpoint.  By adding
-  variables and if statements into this field you will drive the main body of
-  your application
+  Congratulations, you meet our
+  eligibility requirements.
+
+  Please contact bla bla bla 
+  for more assistance
 buttons:
   - Exit: exit
   - Restart: restart
