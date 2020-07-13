@@ -1,0 +1,56 @@
+---
+variable name: MJFperson_info
+use objects: True
+data:
+  - Name: Ida Noe
+    Number of Children: 4
+    Household Income: 45000
+    Is a Citizen?: True
+  - Name: Hugo First
+    Number of Children: 0
+    Household Income: 125000
+    Is a Citizen?: True
+  - Name: Moda Lawn
+    Number of Children: 1
+    Household Income: 33000
+    Is a Citizen?: False
+  - Name: Kate Jup
+    Number of Children: 2
+    Household Income: 82000
+    Is a Citizen?: True
+  - Name: Ayfor Gott
+    Number of Children: 7
+    Household Income: 50000
+    Is a Citizen?: True
+  - Name: Justin Tyme
+    Number of Children: 0
+    Household Income: 48000
+    Is a Citizen?: True
+  - Name: Ray Member
+    Number of Children: 3
+    Household Income: 75000
+    Is a Citizen?: False
+  - Name: Studie Harde
+    Number of Children: 0
+    Household Income: 25000
+    Is a Citizen?: True
+---
+mandatory: True
+question:  Data table as a table
+subquestion: |
+  #### Our data was a table.  Now we make it a table again!
+  
+  ${ MJFdisplay_table }
+---
+table: MJFdisplay_table
+rows: MJFperson_info
+columns:
+  - Name: |
+      row_item['Name']
+  - No. Children: |
+      row_item['Number of Children']
+  - Household Income: |
+      currency(row_item['Household Income'])
+  - Citizenship Status: |
+      row_item['Is a Citizen?']
+---

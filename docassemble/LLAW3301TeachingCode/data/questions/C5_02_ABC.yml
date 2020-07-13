@@ -1,0 +1,188 @@
+mandatory: True
+code: |
+  MJFdisplay_welcome_screen
+  MJFdisplay_disclaimer_screen
+  
+  # Threshold requirements
+  if MJFage_ok and MJFis_resident and MJFis_citizen:
+    # We're here because the threshold questions were met
+    MJFASD_diagnosed
+    
+    # Ask the eligibility questions
+    if MJFDQ1.any_true():
+      if MJFDQ2 == 'There is no treatment to improve my impairment':
+        MJFeligible_endpoint
+      elif MJFDQ2 == 'My impairment may improve over time':
+        MJFineligible_endpoint_2
+      elif MJFDQ2 == "I don't know":
+        MJFineligible_endpoint_3
+      else:
+        pass
+    else:
+      MJFineligible_endpoint_1
+  else:
+    MJFthreshold_not_met
+---
+question: Welcome
+subquestion: |
+  Welcome to the NDIS ASD app!
+continue button field: MJFdisplay_welcome_screen
+---
+code: |
+  MJFdisplay_disclaimer_screen = True
+  force_ask('MJFdisclaimer_screen')
+---
+event: MJFdisclaimer_screen
+question: Disclaimer
+subquestion: |
+  This is not legal advice
+  
+  bla bla bla
+buttons:
+  - I accept these terms: continue
+  - I do not accept these terms: exit
+---
+# Age requirements
+question: What is your age
+fields:
+  - no label: MJFage
+    datatype: integer
+    default: 33
+---
+# This code block works out MJFage_ok
+code: |
+  if 7 <= MJFage <= 65:
+    MJFage_ok = True
+  else:
+    MJFage_ok = False
+---
+# Residency threshold question
+question: Are you currently residing in Australia?
+yesno: MJFis_resident
+---
+# Citizenship question
+question: Citizenship
+subquestion: |
+  Are you either:
+  
+  - an Australian citizen;
+  - a holder of a permanent residency visa; or
+  - a holder of a Special Category Visa ('SCV')
+fields:
+  - no label: MJFis_citizen
+    datatype: yesnoradio
+    default: True
+---
+event: MJFthreshold_not_met
+question: Ineligible
+subquestion: |
+  You are not eligible to run this application because you have indicated that
+  you are either:
+  
+  - not between 7 and 65 years of age;
+  - not resident in Australia; or
+  - not an Australian citizen, permanent visa holder or Special Category Visa holder
+  
+  Some text to direct ABC website
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+question: ASD Diagnosis
+fields:
+  - Have you been diagnosed with ASD?: MJFASD_diagnosed
+    datatype: yesnoradio
+  - Who diagnosed you?: MJFwho_diagnosed_you
+    datatype: checkboxes
+    choices:
+      - Multi-disciplinary team
+      - Paediatrician
+      - Psychiatrist
+    show if:
+      variable: MJFASD_diagnosed
+      is: True
+  - What level was your ASD diagnosis: MJFASD_level
+    datatype: radio
+    choices:
+      - Level 1
+      - Level 2
+      - Level 3
+    show if:
+      variable: MJFASD_diagnosed
+      is: True
+---
+question: Do you have trouble with any of the following?
+fields:
+  - no label: MJFDQ1
+    datatype: checkboxes
+    choices:
+      - I have difficulty participating in sports
+      - I have difficulty performing voluntary work
+      - I have difficulty travelling
+      - I have trouble engaging in social activities
+---
+event: MJFineligible_endpoint_1
+question: You are not eligible
+subquestion: |
+  In order to be eligible for the NDIS your disability must impair your
+  daily life
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+question: How permanent is your disability?
+fields:
+  - no label: MJFDQ2
+    datatype: radio
+    choices:
+      - There is no treatment to improve my impairment
+      - My impairment may improve over time
+      - "I don't know"
+---
+event: MJFeligible_endpoint
+question: You are eligible
+subquestion: | 
+  You may be eligible for to apply for the NDIS.
+  
+  Questions we asked|Your Answers
+  ---|---
+  Your age:|${MJFage}
+  Your residency status|${MJFis_resident_for_display}
+  Your citizenship status|${MJFis_citizen}
+  %if MJFASD_diagnosed:
+  ASD Diagnosis|You have been diagnosed with ASD
+  Who diagnosed you|${MJFwho_diagnosed_you.true_values()}
+  Level diagnosed|${MJFASD_level}
+  %else:
+  ASD Diagnosis|You have not been diagnosed with ASD
+  %endif
+  Difficulty with daily activities|${MJFDQ1.true_values()}
+  Permanence of disability|${MJFDQ2}
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+event: MJFineligible_endpoint_2
+question: You are not eligible
+subquestion: |
+  You are not eligible as your disability is not permanent
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+event: MJFineligible_endpoint_3
+question: You may not be eligible
+subquestion: |
+  You would only be eligible if your disability was permanent.
+  
+  Contact ABC bla bla bla.
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+code: |
+  if MJFis_resident:
+    MJFis_resident_for_display = 'You are resident in Australia'
+  else:
+    MJFis_resident_for_display = 'You are not an Australian resident'
+---

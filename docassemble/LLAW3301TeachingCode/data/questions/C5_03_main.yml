@@ -1,0 +1,65 @@
+---
+include:
+  - C5_03_questions.yml
+  - C5_03_iteration_1.yml
+  - C5_03_services_data.yml
+---
+objects:
+  - MJFselected_services: DAList.using(there_are_any=True, auto_gather=False)
+---
+# Mandatory code block that will drive the entire application
+mandatory: True
+code: |
+  MJFdisplay_welcome_screen
+  
+  MJFdisplay_final_screen
+  
+---
+code: |
+  MJFdisplay_welcome_screen = True
+  force_ask('MJFwelcome_screen')
+---
+event: MJFwelcome_screen
+question: Welcome
+subquestion: |
+  Welcome message will go here
+  
+  Disclaimer will go here
+  
+  Do you accept these terms?
+buttons:
+  - Yes I do accept: continue
+  - No I do not accept: exit
+---
+event: MJFdisplay_final_screen
+question: Here is a list of your services
+subquestion: |
+  A description of some kind
+  
+  Question|Answer
+  ---|---
+  Age|${MJFage}
+  Gender|${MJFgender}
+  Family|${MJFfamily}
+  Locations Selected|${MJFlocation.true_values()}
+   
+  ${MJFselected_services_table}
+  
+buttons:
+  - Restart: restart
+  - Exit: exit
+---
+table: MJFselected_services_table
+rows: MJFselected_services
+columns:
+  - Service Name: |
+      row_item['name']
+  - Age Range: |
+      'From {} to {}'.format(row_item['min_age'], row_item['max_age'])
+  - Gender: |
+      row_item['gender']
+  - Family: |
+      row_item['family']
+  - Locations: |
+      row_item['location']
+---

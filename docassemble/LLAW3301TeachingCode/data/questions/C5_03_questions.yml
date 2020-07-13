@@ -1,0 +1,37 @@
+---
+question: What is your age?
+fields:
+  - no label: MJFage
+    datatype: integer
+---
+question: What is your gender?
+fields:
+  - no label: MJFgender
+    datatype: radio
+    choices:
+      - Male
+      - Female
+---
+question: Are you looking for accommodation for yourself or for your family?
+fields:
+  - no label: MJFfamily
+    datatype: radio
+    choices:
+      - I am seeking accommodation for my family: family
+      - I am seeking accommodation for myself only: single
+---
+question: Location
+subquestion: |
+  Please select the location or locations in which you are looking
+  for services.
+  
+  You may select more than one location
+fields:
+  - no label: MJFlocation
+    datatype: checkboxes
+    choices:
+      - North
+      - South
+      - East
+      - West
+---

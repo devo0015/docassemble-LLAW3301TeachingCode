@@ -1,0 +1,34 @@
+---
+code: |
+  for MJFa_service in MJFservices:
+    # Criteria tests
+    if MJFa_service['min_age'] <= MJFage <= MJFa_service['max_age']:
+      MJFage_ok = True
+    else:
+      MJFage_ok = False
+      
+    # Gender
+    if MJFgender in MJFa_service['gender']:
+      MJFgender_ok = True
+    else:
+      MJFgender_ok = False
+      
+    # Family
+    if MJFfamily in MJFa_service['family']:
+      MJFfamily_ok = True
+    else:
+      MJFfamily_ok = False
+      
+    # Location
+    MJFlocation_ok = False
+    for MJFa_location in MJFlocation.true_values():
+      if MJFa_location in MJFa_service['location']:
+        MJFlocation_ok = True
+      
+    # Eligibility test
+    if MJFage_ok and MJFgender_ok and MJFfamily_ok and MJFlocation_ok:
+      MJFselected_services.append(MJFa_service)
+      
+      
+  MJFselected_services.gathered = True
+---
