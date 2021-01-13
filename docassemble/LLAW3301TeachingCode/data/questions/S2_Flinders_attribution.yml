@@ -6,7 +6,7 @@ default screen parts:
     <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
     <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
     </div>
-    <div style="margin: 5px; text-align: center">
+    <div style="margin: 5px; text-align: right">
     <cite><small><i>
     Developed by Flinders University in collaboration with XXXX
     </i></small></cite>
