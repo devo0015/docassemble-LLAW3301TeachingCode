@@ -1,0 +1,66 @@
+---
+template: HAA_agencylist[i]['display_record']
+content: |
+  **[${ HAA_agencylist[i].item('service') }]( ${ HAA_agencylist[i].item('website') })**  
+  ${ HAA_agencylist[i].item('address') } [BR]
+  ${ HAA_agencylist[i].item('email') } [BR]
+  ${ HAA_agencylist[i].item('phone') } [BR]
+  ${ HAA_agencylist[i].item('blurb') } [BR]
+
+---
+objects:
+  HAAdisplay_pets: DAList.using(there_are_any=True, auto_gather=False)
+  HAAdisplay_other: DAList.using(there_are_any=True, auto_gather=False)
+---
+# The following code blocks each extract a set of agencies
+# out of the qualifying agencies for display in a separate
+# list.  This way we can display categories of agencies
+# together (eg: Agencies that deal with pets, agencies
+# that deal with ATSI etc).  The logic behind each block
+# is that it:
+# - iterates over all the qualifying agencies
+# - if the relevant test is true then that agency gets added 
+#   to the display list
+# - the key 'printed' is set to true.  This makes sure we
+#   don't display the same agency in more than one display
+#   list.
+---
+# Let's deal with pets first
+code: |
+  HAAdisplay_pets.clear()
+  for HAAagency in HAAqualifying_agencies:
+    # Add if the test passes and it hasn't been printed yet
+    if HAAagency.item('printed') == True:
+      # Don't do anything if already printed
+      pass
+    elif HAAagency.item('pets_test') == True:
+      # We add the text to display in the display list
+      HAAdisplay_pets.append(HAAagency)
+      # And mark it as displayed
+      HAAagency['printed'] = True
+    else:
+      # Otherwise don't do anything
+      pass
+  
+  HAAdisplay_pets.gathered = True
+---
+# Other categories go here...
+# This is an exercise for students
+---
+# Finally, we display everything else.  Everything else
+# is every record in HAAqualifying_agencies that has
+# not yet been printed.
+code: |
+  HAAdisplay_other.clear()
+  for HAAagency in HAAqualifying_agencies:
+    # Only add if not yet printed
+    if HAAagency.item('printed') == True:
+      # Don't do anything if already printed
+      pass
+    else:
+      HAAdisplay_other.append(HAAagency)
+      HAAagency['printed'] = True
+      # I used this for debugging
+      # HAAdisplay_other.append('printed: {}: attr_def: {} item(printed): {}[BR]'.format(HAAagency['service'], HAAagency.attribute_defined('printed'), HAAagency.item('printed')))  
+  HAAdisplay_other.gathered = True
+---

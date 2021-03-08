@@ -1,0 +1,99 @@
+---
+# This code block adds an agency to the list of qualifying agencies
+# if all the qualification critera are met.  Each test is laid
+# out in a code block under this first code block
+code: |
+  HAAqualifying_agencies.clear()
+  MJFi = 0
+  for HAAagency in HAA_agencylist:
+    # Add a qualifying agency if it meets these requirements:
+    # - age
+    # - gender
+    # - Location
+    # - Aboriginal or Torres Strait Islander status
+    # - Accommodation for single or family
+    # OR
+    # - manages pets 
+    if ( HAAagency['pets_test'] ) or ( HAAagency['age_test'] and HAAagency['gender_test'] and HAAagency['location_test'] and HAAagency['atsi_test'] and HAAagency['families_test'] ):
+      # Append to qualifying agencies
+      HAAqualifying_agencies.append(HAAagency)
+      MJFi += 1
+      if MJFi == 300:
+        break
+  HAAqualifying_agencies.gathered = True
+---
+#
+# All the tests go under here
+#
+---
+# Test for age.  Make sure age falls within max and min
+# age for an agency
+code: |
+  if HAA_agencylist[i].item('min_age') <= HAAage <= HAA_agencylist[i].item('max_age'):
+    HAA_agencylist[i]['age_test'] = True
+  else:
+    HAA_agencylist[i]['age_test'] = False
+---
+# Test for gender
+# If the user identifies as 'other' then this test is always true,
+# otherwise, this test is true if the selected gender matches the gender(s)
+# specified in the record
+code: |
+  if HAAgender == 'other':
+    HAA_agencylist[i]['gender_test'] = True
+  elif HAA_agencylist[i].item('gender').item(HAAgender):
+    HAA_agencylist[i]['gender_test'] = True
+  else:
+    # We don't have a match and we're not 'other' so
+    # this test fails
+    HAA_agencylist[i]['gender_test'] = False
+---
+# Test for location.
+# The can answer that they either:
+# - live in the metro area
+# - do not live in the metro area
+# - are not sure
+# If the user isn't sure then we include all locations, otherwise
+# we include only the selected location
+code: |
+  if HAAmetro == None:
+    # User isn't sure, so set test to true
+    HAA_agencylist[i]['location_test'] = True
+  elif HAAmetro == HAA_agencylist[i].item('metro'):
+    HAA_agencylist[i]['location_test'] = True
+  else:
+    HAA_agencylist[i]['location_test'] = False
+---
+# Test for Aboriginal and Torres Strait Islander
+# status.
+# If the user identifies as ATSI then the test is always
+# true.  If the user does not identify as ATSI then the test
+# is true only if the agency *excludes* ASTI people from
+# its client list
+code: |
+  if HAAabor:
+    # Test is always true if person identifies as ATSI
+    HAA_agencylist[i]['atsi_test'] = True
+  elif HAAabor == False and HAA_agencylist[i].item('indigenous') == False:
+    HAA_agencylist[i]['atsi_test'] = True
+  else:
+    HAA_agencylist[i]['atsi_test'] = False
+---
+# Match family status
+code: |
+  if HAAfamily == 'Single' and HAA_agencylist[i].item('families').item('singles'):
+    HAA_agencylist[i]['families_test'] = True
+  elif HAAfamily == 'Family' and HAA_agencylist[i].item('families').item('family'):
+    HAA_agencylist[i]['families_test'] = True
+  else:
+    HAA_agencylist[i]['families_test'] = False
+---
+# Match pets status.
+# We only set to true if the user has pets and
+# the agency handles pets.  Otherwise set to false
+code: |
+  if HAApets and HAA_agencylist[i].item('pets'):
+    HAA_agencylist[i]['pets_test'] = True
+  else:
+    HAA_agencylist[i]['pets_test'] = False
+---

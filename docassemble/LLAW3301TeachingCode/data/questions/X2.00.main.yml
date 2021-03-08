@@ -1,0 +1,123 @@
+# This is the main file for the SACAT Homelessness Advisor App
+---
+metadata:
+  title: |
+    SACAT Homelessness Advisor
+  short title: |
+    Homelessness Advisor
+  organisation: Flinders University
+  show login: True
+---
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with SACAT
+    </i></small></cite>
+    </div>
+    </div>
+---
+include:
+  - X2.01.questions.yml
+  - X2.01.agency_table.yml
+  - X2.01.get_qualifying_agencies.yml
+  - X2.01.display_output.yml
+---
+objects:
+  - HAAqualifying_agencies: DAList.using(there_are_any=True, auto_gather=False)
+  - SACATlogo: DAStaticFile.using(filename='X2.01.SACAT.png')
+  - endpoints: DADict
+---
+features:
+  css: X2.01.SACAT.css
+  debug: True
+  hide standard menu: False
+---
+mandatory: True
+code: |
+  # To use a custom logo we need to set the 'logo' metadata to 
+  # some custom HTML.  The string below creates the HTML and 
+  # inserts into it the logo contained in the file SACATlogo using
+  # the python format() method 
+  HAAlogostring = '<div class="media"><img src="{}" class="mr-3" height="50"><div class="media-body"></div></div>'.format(SACATlogo.url_for())
+
+  # Once we've created the string we use set_parts() to set our new logo metadata
+  set_parts(logo=HAAlogostring)
+---
+# This code drives the app
+mandatory: True
+code: |
+  # HAAeligible is set in our welcome screen so we start
+  # by setting that
+  if HAAeligible:
+    # If we're eligible then display the final screen
+    # The variables called for in the final screen will trigger
+    # the rest of the interview
+    endpoints['final_screen']
+  else:
+    # If we're not eligible go to the ineligible endpoint
+    endpoints['ineligible']
+---
+event: endpoints['final_screen']
+question: ""
+subquestion:  |
+  % if HAApets:
+  ### Services for Pets
+
+  The agencies listed here will not accept pets.
+  
+  Contact these agencies to discuss alternative 
+  care options for your pet.
+
+  %for HAAdisplay_entry in HAAdisplay_pets:
+  ${ HAAdisplay_entry['display_record'].show() }
+  %endfor  
+  % endif
+  
+
+  % if HAAfamily == 'Single':
+  ### Services for you
+  % else:
+  ### Services for You and Your Family
+  % endif
+  
+  Based on your answers, you might be eligible for support from the following agencies.
+
+  You should contact them as soon as you can to try an arrange emergency housing.
+  
+  %for HAAdisplay_entry in HAAdisplay_other:
+  ${ HAAdisplay_entry['display_record'].show() }
+  %endfor
+  
+  ### Community Housing
+  
+  Further information on long term accommodation can be found 
+  on the [SA.GOV.AU website](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations).  
+attachment code: |
+  [HAAprintout]
+buttons:
+  - Exit: exit
+    url: http://www.sacat.sa.gov.au
+  - Restart: restart
+---
+attachment: 
+  - name: SACAT Homelessness Advisory App
+    filename: Result Printout
+    valid formats:
+      - pdf
+    docx template file: X2.01.HAA_print_out.docx
+    variable name: HAAprintout
+---
+event: endpoints['ineligible']
+question: Not Eligible
+subquestion:
+  The disclaimer has not been understood and accepted.  Please exit the
+  application or restart if you'd like to accept the disclaimer.
+buttons:
+  - Exit: exit
+    url: https://www.sacat.sa.gov.au
+  - Restart: restart
+---

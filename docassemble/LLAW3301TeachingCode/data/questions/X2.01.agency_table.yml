@@ -1,0 +1,861 @@
+---
+variable name: HAA_agencylist
+use objects: true
+data: 
+  - service: Adolescent Community Brokerage
+    service_provider: Uniting Communities
+    address: 43 Franklin Street, Adelaide, South Australia 5000
+    email: acbrokerage@unitingcommunities.org
+    phone: 8202 5060
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
+    min_age: 16
+    max_age: 20
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young people aged 16-20 who are currently homeless or at risk of becoming homeless.
+  - service: Aged Homelessness Assistance Program - Preferred support provider
+    service_provider: South Australian Housing Authority (Homelessness Strategy, Housing SA)
+    address: 120 Flinders Street, Adelaide, SA, 5000
+    email: DLDCSIAgedHomelessnessAssistanceProgramReferrals@sa.gov.au
+    phone: 131 299
+    website: https://www.housing.sa.gov.au/partnerships/sector-partners/homelessness-service-providers/aged-homelessness-assistance-program
+    min_age: 50
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services men and women over the age of 50.
+  - service: Catherine House
+    service_provider: Catherine House Inc.
+    address: PO Box 6031 Halifax Street, Adelaide, SA, 5000
+    email: reception@catherinehouse.org.au
+    phone: 8232 2282
+    website: https://catherinehouse.org.au/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: false
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Offers accomodation and support services for homeless women over the age of 18 who are unaccompanied by children.   
+  - service: Ceduna Generic Homelessness Service
+    service_provider: Centacare Catholic Family Services - Diocese of Port Pirie
+    address: 11 McKenzie Street, Ceduna, SA, 5690
+    email: generaladmin@centacarecdpp.org.au
+    phone: 8628 7600
+    website: https://www.cccsa.org.au/services/homelessness/
+    min_age: 10
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Ceduna who are homeless or at risk of becoming homeless.
+  - service: Centacare Findon Family Housing
+    service_provider: Centacare Catholic Family Services
+    address: PO Box 284, Kilburn, SA, 5084
+    email: Findon@centacare.org.au
+    phone: 0438 870 049
+    website: http://www.centacare.org.au/service/findon-family-housing/
+    min_age: 0
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: false
+      family: true
+    metro: true
+    blurb: Services young families and pregnant women below the age of 25.
+  - service: Common Ground
+    service_provider: Common Ground Adelaide
+    address: 192 Waymouth Street, Adelaide, SA, 5000
+    email: infosa@hcau.org.au
+    phone: 1300 312 447
+    website: http://www.commongroundadelaide.org.au/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services singles above the age of 18, with limited accommodation for couples.
+  - service: Community Transition Worker - Westcare
+    service_provider: Baptist Care SA 
+    address: 11-19 Miller Court, Adelaide, SA, 5000
+    email: enquiries@baptisitcare.org.au
+    phone: 8118 5200
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/community-transition-worker-baptist-care/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services anybody who is at risk of homelessness.
+  - service: Coober Pedy Homelessness and Support Service
+    service_provider: Uniting Country SA
+    address: 28 Paxton Road, Coober Pedy, SA, 5723
+    email: katrina.almond@ucsa.org.au
+    phone: 1300 067 777
+    website: https://www.ucsa.org.au/homelessness-services
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Coober Pedy who are currently homeless or are at risk of becoming homeless.
+  - service: Eastern Adelaide Aboriginal Specific Homelessness Service
+    service_provider: Baptist Care Inc and Aboriginal Sobriety Group
+    address: 11-19 Millers Court, Adelaide, SA, 5000
+    email: enquiries@baptisitcare.org.au
+    phone: 8118 5200
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/eastern-adelaide-aboriginal-specific-homelessness-service
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services Aboriginal adults and families in the Eastern Suburbs.
+  - service: Eastern Adelaide Generic Homelessness Service
+    service_provider: Hutt Street Centre in partnership with Red Cross
+    address: 258 Hutt Street, Adelaide, SA, 5000
+    email: dchutt@huttstcentre.org.au
+    phone: 8418 2500
+    website: https://www.huttstcentre.org.au/need-help
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services adults in the Eastern Suburbs who are homeless or at risk of homelessness.
+  - service: Fleurieu and Kangaroo Island Homelessness Support Service
+    service_provider: Junction Australia
+    address: 31B Cadell Street, Goolwa, SA, 5214    
+    email: fhss@junctionaustralia.org.au
+    phone: 8392 3060
+    website: https://junctionaustralia.org.au/assets/volumes/general-downloads/Junction_Homeless-in-the-Fleurieu.pdf
+    min_age: 15
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in the Southern Fleurieu regions of Victor Harbor, Alexandrina and Yankalilla.
+  - service: Fleurieu and Kangaroo Island Homelessness Support Service
+    service_provider: Junction Australia
+    address: 9 Murray Street, Kingscote, SA, 5223
+    email: khss@junctionaustralia.org.au
+    phone: 8553 2809
+    website: https://junctionaustralia.org.au/assets/volumes/general-downloads/03-Homelessness-on-Kangaroo-Island.pdf
+    min_age: 15
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people on Kangaroo Island who are homeless or at risk of homelessness.
+  - service: Inner North and North East Youth Homelessness Service
+    service_provider: The Salvation Army Ingle Farm
+    address: Cnr Bridge and Maxwell Road, Ingle Farm, SA, 5098
+    email: corpsofficer.inglefarm@aus.salvationarmy.org
+    phone: 8397 9333
+    website: https://www.salvationarmy.org.au/need-help/housing-and-homelessness-support/
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services people between the age of 15-25 and their children in Inner North and North East Adelaide.
+  - service: Inner North Homelessness Service
+    service_provider: Anglicare SA
+    address: 560 North East Road, Holden Hill, SA, 5088
+    email: hiin@anglicaresa.com.au
+    phone: 8118 2660
+    website: https://anglicaresa.com.au/support/homelessness-tenancy-support-services/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services adults, singles and families in Inner North and North East Adelaide.
+  - service: Inner Southern Homelessness Service
+    service_provider: UnitingCare Wesley Bowden Inc
+    address: 730 Marion Road, Marion, SA, 5043
+    email: ucwb@ucwb.org.au
+    phone: 8296 6455
+    website: https://ucwb.org.au/homelessness-services/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services people who are homeless or at risk of homelessness in the Inner Southern suburbs.
+  - service: Inner Southern Youth Homelessness Service
+    service_provider: Baptist Care (SA) Inc
+    address: Unit 3, 5-7 Stephen Street, Melrose Park, SA, 5039
+    email: enquiries@baptisitcare.org.au
+    phone: 8177 4900
+    website: https://baptistcaresa.org.au/service/homelessness-services/youth-support
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services people aged between 15-25 and their children in the Inner Southern suburbs.
+  - service: Kurlana Tampawardli housing support
+    service_provider: Uniting Communities
+    address: 45-47 Tapleys Hill Road, Hendon, SA, 5014
+    email: acc@unitingcommunities.org
+    phone: 8202 5610
+    website: https://www.unitingcommunities.org/aboriginal-services/kurlana-tampawardli
+    min_age: 10
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services Aboriginal people from rural or remote communities who are sleeping rough, prioritising families.
+  - service: Ladder St. Vincent Street
+    service_provider: St Johns youth service
+    address: Cnr Marryat Street and St Vincent Street, Port Adelaide, SA, 5015
+    email: FoyerReferrals@sjys.com.au
+    phone: 8447 1090
+    website: http://www.stjohnsyouthservices.org.au/wp-content/uploads/2016/11/LINK-A-FACT-SHEET-Ladder-SVS1.pdf
+    min_age: 16
+    max_age: 21
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young people aged 16-21.
+  - service: Lakeview Transitional Accommodation Centre - Port Augusta
+    service_provider: Housing SA
+    address: Buzzacott Close, Port Augusta, SA, 5700
+    email: christy.harris@sa.gov.au
+    phone: 8641 2944
+    website: http://www.caesa.org/transitional.html
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Provides short term accommodation for homeless Aboriginal people in Port Augusta.
+  - service: Limestone Coast Generic Homelessness Service
+    service_provider: Anglican Community Care Inc
+    address: 22 Ferrers Street, Mount Gambier, SA, 5290
+    email: care@accare.org.au
+    phone: 8723 0540
+    website: http://www.accare.org.au/services/homelessness/homelessness-service/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Mount Gambier who are homeless or at risk of homelessness.
+  - service: Murray Bridge Adelaide Hills Generic Homelessness Service
+    service_provider: Anglican Community Care Inc
+    address: 15 - 19 Kennett Road, Murray Bridge, SA, 5253
+    email: care@accare.org.au
+    phone: 8532 6303
+    website: http://www.accare.org.au/services/homelessness/homelessness-service/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Murray Bridge who are homeless or at risk of homelessness.
+  - service: Outer North Generic Homelessness Service
+    service_provider: Anglicare SA
+    address: 91-93 Elizabeth Way, Elizabeth, SA, 5112
+    email: hion@anglicaresa.com.au
+    phone: 8209 5460
+    website: https://anglicaresa.com.au/support/homelessness-tenancy-support-services/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services Adults in the outer northern suburbs who are homeless or at risk of homelessness.
+  - service: Outer North Youth Homelessness Service
+    service_provider: Centacare Catholic Family Services
+    address: 34 Yorktown Road, Elizabeth Park, SA, 5113
+    email: elizabeth@centacare.org.au
+    phone: 8252 2311
+    website: http://www.centacare.org.au/wp-content/uploads/services/yacss/Youth-Services-Elizabeth-Program-Brochure-FINAL.pdf
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young people aged 15-24 in the outer northern suburbs.
+  - service: Outer North Youth Homelessness Service
+    service_provider: Centacare Catholic Family Services
+    address: 26 Second Street, Nuriootpa, SA, 5355
+    email: nuriootpa@centacare.org.au
+    phone: 8303 6625
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-youth-homelessness-service
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: false
+    blurb: Services young people aged 15-25 in Nurioopta who are at risk of homelessness.
+  - service: Outer Southern Generic Homelessness Service
+    service_provider: Lutheran Community Care
+    address: Onkaparinga Council Area
+    email: osghs_admin@lccare.org.au
+    phone: 8326 4688
+    website: https://www.lccare.org.au/find-help/homelessness/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services people in the Outer Southern suburbs who are homeless or at risk of homelessness.
+  - service: Outer Southern Youth Homelessness Service
+    service_provider: Junction Australia
+    address: 34 Beach Road, Christies Beach, SA, 5165
+    email: admin@junctionaustralia.org.au
+    phone: 8392 3000
+    website: https://junctionaustralia.org.au/community-services/youth
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services young people aged 15-25 in the Outer Southern Suburbs.
+  - service: Port Augusta Generic Homelessness Service
+    service_provider: The Salvation Army (SA) Property Trust
+    address: Shop 1, 96 Carlton Parade, Port Augusta, SA, 5700
+    email: paghs@aus.salvationarmy.org
+    phone: 8641 1021 / 1800 033 910
+    website: https://www.salvationarmy.org.au/portaugusta/community-services/generic-homelessness-service/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people who are homeless or at risk of homelessness in Port Augusta.
+  - service: Port Augusta Youth Homelessness Service
+    service_provider: UnitingCare Wesley Country SA
+    address: 36 Stirling Road, Port Augusta, SA, 5700
+    email: payouth@ucsa.org.au
+    phone: 7628 3100
+    website: https://www.ucsa.org.au/port-augusta-and-amity-youth-homelessness-service
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: false
+    blurb: Services young people aged 15-25 in Port Augusta.
+  - service: Port Lincoln Homelessness Service
+    service_provider: West Coast Youth and Community Support Inc
+    address: 1/7 Mortlock Terrace, Port Lincoln, SA, 5606
+    email: outreach@wcycs.com.au
+    phone: 8683 0072
+    website: https://www.wcycs.com.au/about-us/what-we-do/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Port Lincoln who are homeless or at risk of homelessness.
+  - service: Riverland Homelessness Assertive Outreach Program
+    service_provider: Life Without Barriers
+    address: 12 Crawford Terrace, Berri, SA, 5343
+    email: info@lwb.org.au
+    phone: 8580 5500
+    website: https://www.lwb.org.au/services/homelessness-support-services/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services individuals and families in Berri who are sleeping rough.
+  - service: Southern Country Homelessness Service & Riverland Generic Homelessness (Limestone Coast)
+    service_provider: Anglican Community Care Inc. (Limestone Coast)
+    address: 22 Ferrers Street, Mount Gambier, SA, 5290
+    email: care@accare.org.au
+    phone: 7725 3000
+    website: http://www.accare.org.au/services/homelessness/homelessness-service/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people on the Limestone Coast who are homeless or at risk of homelessness.
+  - service: Southern Country Homelessness Service & Riverland Generic Homelessness (Murray Bridge)
+    service_provider: Anglican Community Care Inc. (Murray Bridge)
+    address: 15-19 Kennett Road, Murray Bridge, SA, 5253
+    email: care@accare.org.au
+    phone: 8532 4900
+    website: http://www.accare.org.au/services/homelessness/homelessness-service/
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Murray Bridge who are homeless or at risk of homelessness.
+  - service: Southern Country Homelessness Service & Riverland Generic Homelessness (Riverland)
+    service_provider: Anglican Community Care Inc. (Riverland)
+    address: 5 Kealley Street, Berri, SA, 5343
+    email: care@accare.org.au
+    phone: 8580 5300
+    website: http://www.accare.org.au/services/homelessness/homelessness-service/0
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Berrie who are homeless or at risk of homelessness.
+  - service: St. John's Youth Service
+    service_provider: St. John's Youth Service
+    address: 379 Halifax Street, Adelaide, SA, 5000
+    email: stjohns@stjohnsyouthservices.org.au
+    phone: 8359 2989
+    website: http://www.stjohnsyouthservices.org.au/services/
+    min_age: 16
+    max_age: 21
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services young people aged 16-21 and their children.
+  - service: St Vincent de Paul Homeless Men Crisis Accommodation Service
+    service_provider: St Vincent de Paul Society (SA) Inc
+    address: 28 Whitmore Square, Adelaide, SA, 5000
+    email: svdp@svdpsa.org.au
+    phone: 8231 2250
+    website: https://www.vinnies.org.au/page/Find_Help/SA/Housing/Vincentian_Centre/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: false
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services men aged 18 years and over.
+  - service: Towards Independence
+    service_provider: Salvation Army Towards Independence
+    address: 62 Whitmore Square, Adelaide, SA, 5000
+    email: Intake and information interviews are held on weekdays between 11.00 am to 1.00 pm (no booking required).
+    phone: 8110 8500
+    website: https://www.salvationarmy.org.au/locations/south-australia/towards-independence/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services single people in the Adelaide metropolitan area.
+  - service: Wangka Wilurrara transitional accommodation centre - Ceduna
+    service_provider: Council of Aboriginal Elders of SA Inc. 
+    address: 21 Goode Road, Ceduna, SA, 5690
+    email: donna.ware@dfc.sa.gov.au
+    phone: 8625 3522
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/wangka-wilurrara-transitional-accommodation-centre
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services Aboriginal people in Ceduna who require short term accommodation.
+  - service: Western Aboriginal Homelessness Service
+    service_provider: Aboriginal Sobriety Group Inc
+    address: Western Suburbs
+    email: waahs@asg.org.au
+    phone: 8243 1698
+    website: http://asg.org.au/homelessness/
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services Aboriginal people in the Western Suburbs who are homeless or at risk of homelessness.
+  - service: Western Adelaide Homelessness Service
+    service_provider: UnitingSA
+    address: 124 Lipson Street, Port Adelaide, SA, 5015
+    email: unitingsa@unitingsa.com.au
+    phone: 8440 2110
+    website: https://unitingsa.com.au/wp-content/uploads/2018/07/UNITINGSA-GENERAL-HOMELESSNESS-2PP-DL-FIN-V4-WEB.pdf
+    min_age: 18
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services people in the Western Suburbs who are homeless or at risk of homelessness.
+  - service: Western Adelaide Youth Homelessness Service
+    service_provider: UnitingSA
+    address: 124 Lipson Street, Port Adelaide, SA, 5015
+    email: unitingsa@unitingsa.com.au
+    phone: 8440 2110
+    website: https://unitingsa.com.au/wp-content/uploads/2018/07/UNITINGSA-GENERAL-HOMELESSNESS-2PP-DL-FIN-V4-WEB.pdf
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young people aged 15-25 in the Western Suburbs.
+  - service: Whyalla Generic Homelessness Service (Youth Focus)
+    service_provider: Centacare
+    address: 5 Colebrook Street, Whyalla Stuart, SA, 5608
+    email: whreferrals@centacare.org.au
+    phone: 8645 3655
+    website: http://www.centacare.org.au/service/whyalla-generic-homelessness-service-youth-focus-program/
+    min_age: 15
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services individuals and families in Whyalla, with a focus on young people aged 15-25.
+  - service: Yorke and Mid North Homelessness Service (Port Pirie)
+    service_provider: UnitingCare Wesley Country SA
+    address: 60 Florence Street, Port Pirie, SA, 5540
+    email: unitingcountry@ucsa.org.au
+    phone: 8633 8622 / 0428 326 540
+    website: https://www.ucsa.org.au/homelessness-services
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Port Pirie who are homeless or at risk of homelessness.
+  - service: Yorke and Mid North Homelessness Service (Clare)
+    service_provider: UnitingCare Wesley Country SA
+    address: Shop 4 Village Plaza, 47 Old North Road, Clare, SA, 5453
+    email: unitingcountry@ucsa.org.au
+    phone: 8841 2856 / 0428 326 530
+    website: https://www.ucsa.org.au/homelessness-services
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services people in Clare who are homeless or at risk of homelessness.
+  - service: Yorke and Mid North Homelessness Service (Kadina)
+    service_provider: UnitingCare Wesley Country SA
+    address: 8 Digby Street, Kadina, SA 5554
+    email: unitingcountry@ucsa.org.au
+    phone: 8821 0307 / 0428 326 527
+    website: https://www.ucsa.org.au/homelessness-services
+    min_age: 0
+    max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
+    metro: false
+    blurb: Services individuals in Kadina who are homeless or at risk of homelessness.
+  - service: Young Family Support Program - Louise Place
+    service_provider: Centacare
+    address: 5 Randolph Avenue, Fullarton, SA, 5063
+    email: louiseplace@centacare.org.au
+    phone: 8272 6811
+    website: http://www.centacare.org.au/service/louise-place/
+    min_age: 0
+    max_age: 18
+    gender: 
+      male: false
+      female: true
+    indigenous: false
+    families:
+      singles: false
+      family: true
+    metro: true
+    blurb: Services pregnant women and mothers aged 18 or younger, and their children.
+  - service: Young Family Support Program - Malvern Place
+    service_provider: Centacare
+    address: PO Box 284, Kilburn, SA, 5084
+    email: malvern@centacare.org.au
+    phone: 8359 1022
+    website: http://www.centacare.org.au/service/malvern-place/
+    min_age: 0
+    max_age: 25
+    gender: 
+      male: false
+      female: true
+    indigenous: false
+    families:
+      singles: false
+      family: true
+    metro: true
+    blurb: Services pregnant women and mothers aged 25 years or younger, and their children.
+  - service: Young Family Support Program - Coolock House
+    service_provider: Centacare
+    address: PO Box 362, Morphett Vale, SA, 5162
+    email: coolock@centacare.org.au
+    phone: 8382 6699
+    website: http://www.centacare.org.au/service/coolock-house/
+    min_age: 0
+    max_age: 25
+    gender: 
+      male: false
+      female: true
+    indigenous: false
+    families:
+      singles: false
+      family: true
+    metro: true
+    blurb: Services pregnant women and mothers aged 25 years or younger, and their children.
+  - service: Youth Accommodation Aboriginal Specific Homelessness Services - Olga Fudge Lodge
+    service_provider: Aboriginal Family Support Services
+    address: 134 Waymouth Street, Adelaide, SA, 5000
+    email: afss@afss.com.au
+    phone: 8205 1500
+    website: https://www.afss.com.au/access-to-services
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: false
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
+    metro: true
+    blurb: Services Aboriginal women aged 15-25, with or without children.
+  - service: Youth Accommodation Aboriginal Specific Homelessness Services - Narungga House
+    service_provider: Aboriginal Family Support Services
+    address: 134 Waymouth Street, Adelaide, SA, 5000
+    email: afss@afss.com.au
+    phone: 8205 1500
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-accommodation-aboriginal-specific-homelessness-services
+    min_age: 15
+    max_age: 25
+    gender: 
+      male: true
+      female: false
+    indigenous: true
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young Aboriginal men without children.
+  - service: HYPA Housing
+    service_provider: Service to Youth Council
+    address: 135-139 Currie Street, Adelaide, SA, 5000
+    email: hypaadmin@syc.net.au
+    phone: 8405 8540 / 1800 807 364
+    website: https://www.syc.net.au/home/homelessness/hypa-housing/
+    min_age: 17
+    max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    metro: true
+    blurb: Services young people aged 17-25 years who are homeless or at risk of homelessness.
+  - service: Safe Pets Safe Families
+    address: PO Box 427, CHRISTIES BEACH SA 5165
+    website: https://safepetssafefamilies.org.au/
+    email: safepetssafefamilies@gmail.com
+    phone: 0409 818 879
+    pets: True
+---
