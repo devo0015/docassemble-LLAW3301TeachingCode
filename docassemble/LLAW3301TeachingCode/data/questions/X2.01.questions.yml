@@ -32,8 +32,8 @@ fields:
   - no label: HAAfamily
     datatype: radio
     choices:
-     - "I am seeking accommodation on my own": Single
-     - "I am seeking accommodation with my family, or I am pregnant": Family
+     - "I am seeking accommodation on my own": singles
+     - "I am seeking accommodation with my family, or I am pregnant": family
 ---
 question: |
   Do you live in the Adelaide Metropolitan Area?

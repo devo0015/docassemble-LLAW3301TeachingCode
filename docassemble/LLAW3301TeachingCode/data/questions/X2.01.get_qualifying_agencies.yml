@@ -81,9 +81,9 @@ code: |
 ---
 # Match family status
 code: |
-  if HAAfamily == 'Single' and HAA_agencylist[i].item('families').item('singles'):
+  if HAAfamily == 'singles' and HAA_agencylist[i].item('families').item('singles'):
     HAA_agencylist[i]['families_test'] = True
-  elif HAAfamily == 'Family' and HAA_agencylist[i].item('families').item('family'):
+  elif HAAfamily == 'family' and HAA_agencylist[i].item('families').item('family'):
     HAA_agencylist[i]['families_test'] = True
   else:
     HAA_agencylist[i]['families_test'] = False
@@ -97,3 +97,86 @@ code: |
   else:
     HAA_agencylist[i]['pets_test'] = False
 ---
+# Test for gender-specific services.  Gender-specific services
+# are services that cater ONLY for one gender (male or female).
+# In order to determine this we need to ensure that the agency
+# only has HAAgender set to true and the other gender(s) either
+# doesn't exist or is false.
+code: |
+  # We assume there must be a gender key
+  # We iterate through each of the genders in the gender key
+  # We test that:
+  # - the gender that matches HAAgender is true; and
+  # - any other genders are false
+  # If so, we set gender_specific to true, otherwise we
+  # set it to false.
+  #
+  # This is actually pretty complex to do.  We need to iterate
+  # over each gender, run each test above and store each individual
+  # test result.  Then we need to look over all the results to make
+  # sure they're all OK. 
+  #
+  # We'll do this by keeping a test score.  Each time a test passes
+  # we'll add 1 to the score.  If all the tests pass, then our score
+  # will match the number of elements in the list (as we've tested
+  # each one and it's passed).
+
+  # Store the genders in a temporary variable (so it's easier to read)
+  MJFgenders = HAA_agencylist[i].item('gender')
+  
+  # Set the score to 0
+  MJFtest_score = 0
+  for MJFgender_key in MJFgenders.keys():
+    if MJFgender_key == HAAgender and MJFgenders[MJFgender_key]:
+      # Increment the score if the gender matches HAAgender and
+      # that gender is set to true in this record.
+      MJFtest_score = MJFtest_score + 1
+    elif MJFgender_key != HAAgender and not MJFgenders[MJFgender_key]:
+      # Increment the score if the gender doesn't match HAAgender and
+      # that gender is set to false in this record
+      MJFtest_score = MJFtest_score + 1
+    else:
+      # The above two cases are the only times we need to increment
+      # the test score.  For any other situation we leave the score
+      # as it is ie: we do nothing
+      pass
+
+  # Now we've been through the genders, if the score and the length
+  # of the list match up we have a gender-specific service
+  # Otherwise, we don't.
+  # We only run the test if MJFgenders contained anything at all
+  # (ie: it had at least one gender specified).  If the length of
+  # MJFgenders is 0, then we return false.
+  if len(MJFgenders) == 0:
+    HAA_agencylist[i]['gender_specific'] = False
+  elif MJFtest_score == len(MJFgenders):
+    # This means all tests were passed
+    HAA_agencylist[i]['gender_specific'] = True
+  else:
+    # This means some tests failed.
+    HAA_agencylist[i]['gender_specific'] = False
+---
+# Test for family-specific services.  Family-specific services
+# are services that cater ONLY for either singles or people
+# with children.  This code is heavily based on the gender-specific
+# code above so I have not commented this code.
+code: |
+
+  MJFfamilies = HAA_agencylist[i].item('families')
+
+  # Set the score to 0
+  MJFtest_score = 0
+  for MJFfamily_key in MJFfamilies.keys():
+    if MJFfamily_key == HAAfamily and MJFfamilies[MJFfamily_key]:
+      MJFtest_score = MJFtest_score + 1
+    elif MJFfamily_key != HAAfamily and MJFfamilies[MJFfamily_key] == False:
+      MJFtest_score = MJFtest_score + 1
+    else:
+      pass
+  
+  if len(MJFfamilies) == 0:
+    HAA_agencylist[i]['family_specific'] = False
+  elif MJFtest_score == len(MJFfamilies):
+    HAA_agencylist[i]['family_specific'] = True
+  else:
+    HAA_agencylist[i]['family_specific'] = False

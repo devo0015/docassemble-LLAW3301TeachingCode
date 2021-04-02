@@ -43,6 +43,7 @@ code: |
   # inserts into it the logo contained in the file SACATlogo using
   # the python format() method 
   HAAlogostring = '<div class="media"><img src="{}" class="mr-3" height="50"><div class="media-body"></div></div>'.format(SACATlogo.url_for())
+
   # Once we've created the string we use set_parts() to set our new logo metadata
   set_parts(logo=HAAlogostring)
 ---
@@ -65,15 +66,18 @@ question: ""
 subquestion:  |
   % if HAApets:
   ### Services for Pets
+
   The agencies listed here will not accept pets.
   
   Contact these agencies to discuss alternative 
   care options for your pet.
+
   %for HAAdisplay_entry in HAAdisplay_pets:
   ${ HAAdisplay_entry['display_record'].show() }
   %endfor  
   % endif
   
+
   % if HAAfamily == 'singles':
   ### Services for you
   % else:
@@ -81,6 +85,7 @@ subquestion:  |
   % endif
   
   Based on your answers, you might be eligible for support from the following agencies.
+
   You should contact them as soon as you can to try an arrange emergency housing.
   
   %for HAAdisplay_entry in HAAdisplay_other:
