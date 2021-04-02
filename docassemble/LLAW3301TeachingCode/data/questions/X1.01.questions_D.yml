@@ -1,0 +1,41 @@
+# We put all the left side question block into this file.
+---
+# Test for Offer and Acceptance
+# This code is going to ask two questions to make sure that
+question: Did the other person agree to do this work?
+fields:
+  - no label: DEVcertainty
+    datatype: radio
+    choices:
+      - Yes. The other person agreed exactly to work completed: DEVagree_exact
+      - Yes. The other person agreed to some of the work completed: DEVagree_inexact
+      - No. The other person did not agree to the work completed: DEVdisagree
+---
+# Test for Consideration (and Certainty)
+# Because this is a Yes/No answer we store the results as boolean (ie: True/False)
+# values.  For more information on booleans check out C2.01 video.
+question: Payment for the Work
+subquestion: |
+  Did you and the other person agree how much you would be paid?
+fields:
+  - no label: DEVconsideration
+    datatype: radio
+    choices:
+      - Yes, they agreed to pay ${ currency(DEVpayment_agreed) } for the work: True
+      - No, we never reached a firm agreement on how much I should be paid: False
+---
+# We ask the how much
+question: Payment
+fields:
+  - How much did you agree to be paid for this work?: DEVpayment_agreed
+    datatype: currency
+    min: 0
+#under: |
+#  If you have not yet paid anything, just leave the default value of $0.00
+---
+# Person had capacity.
+question: Who did you contract with?
+subquestion: |
+  Was the other person an adult?
+yesno: DEVcapacity
+---

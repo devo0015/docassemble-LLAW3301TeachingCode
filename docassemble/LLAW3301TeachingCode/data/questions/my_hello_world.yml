@@ -1,0 +1,10 @@
+---
+# my first program
+mandatory: True
+question: Hello world!
+subquestion: |
+  Indenting managed
+  Hello Me,
+  
+  Welcome to Docassemble!
+---

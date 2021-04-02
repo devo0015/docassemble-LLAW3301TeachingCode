@@ -78,7 +78,7 @@ subquestion:  |
   % endif
   
 
-  % if HAAfamily == 'Single':
+  % if HAAfamily == 'singles':
   ### Services for you
   % else:
   ### Services for You and Your Family
