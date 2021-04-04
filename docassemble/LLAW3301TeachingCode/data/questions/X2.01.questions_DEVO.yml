@@ -1,13 +1,12 @@
 ---
 question: ""
 subquestion: |
-  Welcome to the SACAT Homelessness Advisor. This application helps 
-  you find services that may assist if you are facing homelessness.
+  #Welcome to the SACAT Homelessness Advisor
+   
+  This application helps you find services that may assist if you are facing homelessness.
  
   ***Disclaimer:***   
-  This is a guide to possible services that can help you.
-  There are no promises that a service will accept your 
-  request or help you.
+  This is a guide to possible services that can help you. There are no promises that a service will accept your request or help you.
   
   Do you accept these terms?
 yesno: HAAeligible

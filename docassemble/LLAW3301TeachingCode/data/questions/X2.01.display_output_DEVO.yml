@@ -29,7 +29,9 @@ objects:
 #   list.
 ---
 # Let's deal with pets first
+# Included debug and testing pets_count to identify how many services found
 code: |
+  pets_count = 0
   HAAdisplay_pets.clear()
   for HAAagency in HAAqualifying_agencies:
     # Add if the test passes and it hasn't been printed yet
@@ -41,6 +43,7 @@ code: |
       HAAdisplay_pets.append(HAAagency)
       # And mark it as displayed
       HAAagency['printed'] = True
+      pets_count +=1
     else:
       # Otherwise don't do anything
       pass
@@ -48,7 +51,9 @@ code: |
   HAAdisplay_pets.gathered = True
 ---
 # Let's deal with Aboriginal and Torres Strait Islanders next 
+# Included debug and testing abor_count to identify how many services found
 code: |
+  abor_count = 0
   HAAdisplay_abor.clear()
   for HAAagency in HAAqualifying_agencies:
     # Add if the test passes and it hasn't been printed yet
@@ -60,6 +65,7 @@ code: |
       HAAdisplay_abor.append(HAAagency)
       # And mark it as displayed
       HAAagency['printed'] = True
+      abor_count += 1
     else:
       # Otherwise don't do anything
       pass
@@ -67,7 +73,9 @@ code: |
   HAAdisplay_abor.gathered = True
 ---
 # Let's now deal with gender specific accomodation 
+# Included debug and testing gender_count to identify how many services found
 code: |
+  gender_count = 0
   HAAdisplay_gender.clear()
   for HAAagency in HAAqualifying_agencies:
     # Add if the test passes and it hasn't been printed yet
@@ -79,6 +87,7 @@ code: |
       HAAdisplay_gender.append(HAAagency)
       # And mark it as displayed
       HAAagency['printed'] = True
+      gender_count += 1
     else:
       # Otherwise don't do anything
       pass
@@ -86,7 +95,9 @@ code: |
   HAAdisplay_gender.gathered = True
 ---
 # Let's explore family type specific accomodation 
+# Included debug and testing family_count to identify how many services found
 code: |
+  family_count = 0
   HAAdisplay_family.clear()
   for HAAagency in HAAqualifying_agencies:
     # Add if the test passes and it hasn't been printed yet
@@ -98,6 +109,7 @@ code: |
       HAAdisplay_family.append(HAAagency)
       # And mark it as displayed
       HAAagency['printed'] = True
+      family_count += 1
     else:
       # Otherwise don't do anything
       pass
@@ -107,7 +119,9 @@ code: |
 # Finally, we display everything else.  Everything else
 # is every record in HAAqualifying_agencies that has
 # not yet been printed.
+# Included debug and testing rest_count to identify how many services found
 code: |
+  rest_count = 0
   HAAdisplay_other.clear()
   for HAAagency in HAAqualifying_agencies:
     # Only add if not yet printed
@@ -117,6 +131,7 @@ code: |
     else:
       HAAdisplay_other.append(HAAagency)
       HAAagency['printed'] = True
+      rest_count += 1
       # I used this for debugging
       # HAAdisplay_other.append('printed: {}: attr_def: {} item(printed): {}[BR]'.format(HAAagency['service'], HAAagency.attribute_defined('printed'), HAAagency.item('printed')))  
   HAAdisplay_other.gathered = True

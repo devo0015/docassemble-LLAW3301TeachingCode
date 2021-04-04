@@ -78,13 +78,19 @@ body {
 
 /* Set the colour of the heading 1 level */
 h1 {
-    color: #576675;
+    color: #1e1e1e;    /* Dark Grey  */
 }
 
 /* Set the colour of the heading 2 level */
 h2 {
-    color: #576675;
+    color: #3d3d3d;  /* Medium Grey  */
 }
+
+/* Set the colour of the heading 3 level */
+h3 {
+    color: #515151;   /* Light Grey  */
+}
+
 
 /* Tried to tweak the weblinks on the final page */
 /* unvisited link */
