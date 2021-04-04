@@ -32,7 +32,7 @@ objects:
   - endpoints: DADict
 ---
 features:
-  css: X2.01.SACAT.css
+  css: X2.01.SACAT_DEVO.css
   debug: True
   hide standard menu: False
 ---
@@ -125,12 +125,11 @@ attachment:
     variable name: HAAprintout
 ---
 event: endpoints['ineligible']
-question: Not Eligible
+question: You did not agree with the disclaimer...
 subquestion:
-  The disclaimer has not been understood and accepted.  Please exit the
-  application or restart if you'd like to accept the disclaimer.
+  Are you sure you want to exit the application or try again?
 buttons:
   - Exit: exit
     url: https://www.sacat.sa.gov.au
-  - Restart: restart
+  - Try again: restart
 ---
