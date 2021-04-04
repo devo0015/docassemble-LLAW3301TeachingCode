@@ -65,47 +65,57 @@ event: endpoints['final_screen']
 question: ""
 subquestion:  |
   % if HAApets:
-  ### These agencies will accept pets.
+  ## These agencies will accept your pets.
   
   %for HAAdisplay_entry in HAAdisplay_pets:
   ${ HAAdisplay_entry['display_record'].show() }
+  ----------------------------------------------------
+  
   %endfor  
   % endif
-
   
   % if HAAabor:
-  ### These agencies will support **Aboriginal and Torres Strait Islanders**
+  ## These agencies will support Aboriginal and Torres Strait Islanders
   
   %for HAAdisplay_entry in HAAdisplay_abor:
   ${ HAAdisplay_entry['display_record'].show() }
+  ----------------------------------------------------
+    
   %endfor  
   % endif
 
   % if HAAgender != 'other' :
-  ### These agencies will support **${ HAAgender }** persons
+  ## These agencies will support ${ HAAgender } persons
   
   %for HAAdisplay_entry in HAAdisplay_gender:
   ${ HAAdisplay_entry['display_record'].show() }
+  ----------------------------------------------------
+  
   %endfor  
   % endif
 
   % if HAAfamily:
-  ### These agencies will support **${ HAAfamily }** 
+  ## These agencies will support ${ HAAfamily } 
   
   %for HAAdisplay_entry in HAAdisplay_family:
   ${ HAAdisplay_entry['display_record'].show() }
+  ----------------------------------------------------
+    
   %endfor  
   % endif
 
+  ## Alternative Options
   Based on your answers, you might be eligible for support from the following agencies.
 
   You should contact them as soon as you can to try an arrange emergency housing.
   
   %for HAAdisplay_entry in HAAdisplay_other:
   ${ HAAdisplay_entry['display_record'].show() }
+  ----------------------------------------------------
+  
   %endfor
   
-  ### Community Housing
+  ## Community Housing
   
   Further information on long term accommodation can be found 
   on the [SA.GOV.AU website](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations).  
@@ -125,7 +135,7 @@ attachment:
     variable name: HAAprintout
 ---
 event: endpoints['ineligible']
-question: You did not agree with the disclaimer...
+question: You did not agree with the disclaimer.
 subquestion:
   Are you sure you want to exit the application or try again?
 buttons:
