@@ -1,0 +1,63 @@
+---
+question: ""
+subquestion: |
+  Welcome to the SACAT Homelessness Advisor. This application helps 
+  you find services that may assist if you are facing homelessness.
+ 
+  ***Disclaimer:***   
+  This is a guide to possible services that can help you.
+  There are no promises that a service will accept your 
+  request or help you.
+  
+  Do you accept these terms?
+yesno: HAAeligible
+---
+question: |
+  How would you describe your gender?
+fields: 
+  - no label: HAAgender
+    datatype: radio
+    choices:
+     - "I identify as female": female
+     - "I identify as male": male
+     - "I identify as LGBTQ+": other
+     - 'None': other
+     - "I prefer not to say": other
+---
+question: |
+  Do you have any pets?
+yesno: HAApets
+---
+question: |
+  Who is the accommodation for?
+fields: 
+  - no label: HAAfamily
+    datatype: radio
+    choices:
+     - "It is only for me": singles
+     - "It is for my family, or I am pregnant": family
+---
+question: |
+  Do you live in the Adelaide Metropolitan Area?
+yesnomaybe: HAAmetro
+
+under: |
+    Below is a map of the Adelaide Metropolitan Area
+
+    [FILE X2.01.Metro_Map.jpg, 400px]
+---
+question: |
+  Are you of Aboriginal or Torres Strait Islander origin?
+yesno: HAAabor
+---
+question: |
+  What is your age?
+fields:
+  Age: HAAage
+  datatype: integer
+  min: 0
+  max: 100
+  validation messages: 
+    max: |
+      Please enter an age between 0 and 100
+---
