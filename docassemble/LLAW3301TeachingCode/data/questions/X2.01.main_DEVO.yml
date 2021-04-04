@@ -66,7 +66,7 @@ question: ""
 subquestion:  |
   ## Homelessness Advisory Report
   ---
-  [BR] 
+  
   % if HAApets:
   ### Your pets.
   
@@ -85,45 +85,43 @@ subquestion:  |
   %for HAAdisplay_entry in HAAdisplay_abor:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
-    
+  
   %endfor  
   % endif
 
-  % if HAAgender != 'other' :
-  % if gender_count > 0:
+  % if HAAgender != 'other' and gender_count > 0:
   ### These agencies will support ${ HAAgender } persons
   
-  % endif
-    %for HAAdisplay_entry in HAAdisplay_gender:
+  %for HAAdisplay_entry in HAAdisplay_gender:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
   
   %endfor  
   % endif
 
-  % if HAAfamily:
-  % if family_count > 0:
+  % if HAAfamily and family_count > 0:
   ### These agencies will support ${ HAAfamily } 
   
-  %endif
-    %for HAAdisplay_entry in HAAdisplay_family:
+  %for HAAdisplay_entry in HAAdisplay_family:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
-  [BR]
+  
   %endfor  
   % endif
-  [BR]
+  
   % if rest_count > 0:
   ### Alternative Options
   Based on your answers, you might be eligible for support from the following agencies.
 
   You should contact them as soon as you can to try an arrange emergency housing.
+  
   % endif
   %for HAAdisplay_entry in HAAdisplay_other:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
   
   %endfor
+
   [BR]
   ### Community Housing
   
@@ -141,7 +139,7 @@ attachment:
     filename: Result Printout
     valid formats:
       - pdf
-    docx template file: X2.01.HAA_print_out.docx
+    docx template file: X2.01.HAA_print_out_DEVO.docx
     variable name: HAAprintout
 ---
 event: endpoints['ineligible']
