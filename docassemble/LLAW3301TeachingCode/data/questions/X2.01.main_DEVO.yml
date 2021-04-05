@@ -89,9 +89,11 @@ subquestion:  |
   %endfor  
   % endif
 
-  % if HAAgender != 'other' and gender_count > 0:
+  % if HAAgender != 'other':
+  % if gender_count > 0:
   ### These agencies will support ${ HAAgender } persons
   
+  % endif
   %for HAAdisplay_entry in HAAdisplay_gender:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
@@ -99,15 +101,18 @@ subquestion:  |
   %endfor  
   % endif
 
-  % if HAAfamily and family_count > 0:
+  % if HAAfamily:
+  % if family_count > 0:
   ### These agencies will support ${ HAAfamily } 
   
+  % endif
   %for HAAdisplay_entry in HAAdisplay_family:
   ${ HAAdisplay_entry['display_record'].show() }
   ---
   
   %endfor  
   % endif
+  
   
   % if rest_count > 0:
   ### Alternative Options
